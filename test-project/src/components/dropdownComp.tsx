@@ -12,10 +12,13 @@ const Dropcomp: React.FC = () => {
 
   return (
     <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
-      <h2>Select an option:</h2>
+      <h1 className="text-xl font-bold mb-4">Dropdown menu</h1>
+      <h2>Select an option :</h2>
+      <br />
       <Dropdown options={options} onSelect={handleOptionSelect} />
-
-      {<h3>Selected: {selectedOption}</h3>}
+      <br />
+      <br /> 
+      <h3>Selected : {selectedOption}</h3>
     </div>
   );
 };

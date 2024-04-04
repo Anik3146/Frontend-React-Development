@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 const Sidebar: React.FC = () => {
   const [name, setName] = useState("");
@@ -11,6 +11,13 @@ const Sidebar: React.FC = () => {
     console.log('Age:', age);
     
   };
+  const [val1,setval1] = useState("null")
+  const [val2,setval2] = useState("null")
+  const show = useCallback(()=>{
+    setval1(name);
+    setval2(age);
+  },[name, age,setval1,setval2])
+
 
   return (
     <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
@@ -40,11 +47,16 @@ const Sidebar: React.FC = () => {
         </div>
         <button
           type="submit"
+          onClick={show}
           className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline"
         >
           Submit
         </button>
       </form>
+      <br />
+
+      <h3>Name : {val1}</h3>
+      <h3>Age : {val2}</h3>
     </div>
   );
 };

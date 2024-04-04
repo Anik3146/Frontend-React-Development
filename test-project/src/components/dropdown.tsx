@@ -15,7 +15,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect }) => {
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
-    onSelect(option); // Trigger onSelect callback with the selected option
+    onSelect(option); 
     setIsOpen(false);
   };
 
