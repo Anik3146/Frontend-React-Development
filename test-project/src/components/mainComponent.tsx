@@ -1,8 +1,7 @@
-// MainContent.tsx
 import React, { useState } from 'react';
 
 const MainContent: React.FC = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   return (
     <div className="bg-gray-200 p-6 rounded-lg shadow-lg mr-3 ml-3">
@@ -19,7 +18,7 @@ const MainContent: React.FC = () => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
         onClick={() => setCount(count - 1)}
       >
-        Decreament
+        Decrement
       </button>
     </div>
   );
